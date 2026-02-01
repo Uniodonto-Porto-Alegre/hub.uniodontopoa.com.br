@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&display=swap');
+
+// --- Paleta Uniodonto ---
+
+// Cores Vibrantes
+$uniodonto-roxo: #bf9cff;
+$uniodonto-pêssego: #ff9fad;
+$uniodonto-ciano: #60ebff;
+$uniodonto-lima: #e1ff7b;
+$uniodonto-goiaba: #ff637e;
+
+// Paleta de Apoio
+$uniodonto-vinho-medio: #a60069;
+$uniodonto-vinho-ultra: #550039;
+$uniodonto-vinho-claro: #bc5688;
+
+// --- Sobrescrita do Bootstrap ---
+$primary: $uniodonto-vinho-medio;
+$secondary: $uniodonto-roxo;
+$success: $uniodonto-lima;
+$info: $uniodonto-ciano;
+$danger: $uniodonto-goiaba;
+
+$body-bg: #f4f6f9;
+$font-family-sans-serif: 'Georama', sans-serif;
+
+// Importar Bootstrap depois das variáveis customizadas
+@import "bootstrap/scss/bootstrap";
+
+body {
+    font-family: $font-family-sans-serif;
+    background-color: $body-bg;
+}
+
+// Classes utilitárias customizadas
+.bg-uniodonto-vinho {
+    background-color: $uniodonto-vinho-medio !important;
+    color: white;
+}
+
+.text-uniodonto-vinho {
+    color: $uniodonto-vinho-medio !important;
+}
+
+.btn-uniodonto {
+    background-color: $uniodonto-vinho-medio;
+    border-color: $uniodonto-vinho-medio;
+    color: white;
+
+    &:hover {
+        background-color: darken($uniodonto-vinho-medio, 10%);
+        border-color: darken($uniodonto-vinho-medio, 10%);
+        color: white;
+    }
+}

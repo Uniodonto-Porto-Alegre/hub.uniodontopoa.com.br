@@ -1,0 +1,14 @@
+[
+  { "codigo": "81000065", "descricao": "Consulta odontológica inicial" },
+  { "codigo": "81000030", "descricao": "Consulta odontológica" },
+  { "codigo": "85100200", "descricao": "Restauração de dente" },
+  { "codigo": "85300047", "descricao": "Procedimento Periodontia" },
+  { "codigo": "81000014", "descricao": "Consulta Urgência" },
+  { "codigo": "84000198", "descricao": "Exodontia Simples" },
+  { "codigo": "86000300", "descricao": "Reposição de Aparelho Móvel" },
+  { "codigo": "83000097", "descricao": "Mantenedor de Espaço Fixo" },
+  { "codigo": "83000100", "descricao": "Mantenedor de Espaço Removível" },
+  { "codigo": "85200018", "descricao": "Clareamento de Dente Desvitalizado" },
+  { "codigo": "85100072", "descricao": "Placa de Acetato para Clareamento" },
+  { "codigo": "81000340", "descricao": "Radiografia da ATM" }
+]
