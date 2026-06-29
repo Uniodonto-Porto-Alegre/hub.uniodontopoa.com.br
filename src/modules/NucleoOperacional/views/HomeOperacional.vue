@@ -2,8 +2,8 @@
   <div class="container py-5">
     <div class="row mb-4">
       <div class="col">
-        <h2 class="fw-bold text-uniodonto-vinho">Núcleo Operacional</h2>
-        <p class="text-muted">Módulo de Auditoria e Conferência de Guias</p>
+        <h2 class="fw-bold text-uniodonto-vinho">PROVIMENTOS</h2>
+        <p class="text-muted">Tela operacional de auditoria e conferência de guias</p>
       </div>
     </div>
 

@@ -36,7 +36,7 @@ export function useTxtAnalyzer() {
 
             if (matches) {
                 matches.forEach(codigo => {
-                    const itemTabela = (tabelaTissData as any[]).find(t => t.codigo === codigo);
+                    const itemTabela = (tabelaTissData as any[]).find(t => t.codigo === codigo && t.ativo !== false);
 
                     procedimentos.value.push({
                         linha: index + 1,

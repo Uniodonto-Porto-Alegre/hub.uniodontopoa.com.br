@@ -15,7 +15,7 @@
         @dragover.prevent="isDragging = true"
         @dragleave.prevent="isDragging = false"
         @drop.prevent="onDrop"
-        @click="$refs.fileInput.click()"
+        @click="abrirSeletorArquivo"
       >
         <input 
           type="file" 
@@ -127,17 +127,21 @@ const {
 const isDragging = ref(false);
 const fileInput = ref<HTMLInputElement | null>(null);
 
+const abrirSeletorArquivo = () => {
+  fileInput.value?.click();
+};
+
 const onFileChange = (event: Event) => {
   const input = event.target as HTMLInputElement;
   if (input.files?.length) {
-    processarArquivo(input.files[0]);
+    processarArquivo(input.files[0]!);
   }
 };
 
 const onDrop = (event: DragEvent) => {
   isDragging.value = false;
   if (event.dataTransfer?.files.length) {
-    processarArquivo(event.dataTransfer.files[0]);
+    processarArquivo(event.dataTransfer.files[0]!);
   }
 };
 

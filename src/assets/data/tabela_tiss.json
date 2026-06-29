@@ -1,14 +1,138 @@
 [
-  { "codigo": "81000065", "descricao": "Consulta odontológica inicial" },
-  { "codigo": "81000030", "descricao": "Consulta odontológica" },
-  { "codigo": "85100200", "descricao": "Restauração de dente" },
-  { "codigo": "85300047", "descricao": "Procedimento Periodontia" },
-  { "codigo": "81000014", "descricao": "Consulta Urgência" },
-  { "codigo": "84000198", "descricao": "Exodontia Simples" },
-  { "codigo": "86000300", "descricao": "Reposição de Aparelho Móvel" },
-  { "codigo": "83000097", "descricao": "Mantenedor de Espaço Fixo" },
-  { "codigo": "83000100", "descricao": "Mantenedor de Espaço Removível" },
-  { "codigo": "85200018", "descricao": "Clareamento de Dente Desvitalizado" },
-  { "codigo": "85100072", "descricao": "Placa de Acetato para Clareamento" },
-  { "codigo": "81000340", "descricao": "Radiografia da ATM" }
+  {
+    "codigo": "81000014",
+    "descricao": "Consulta Urgência",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "81000030",
+    "descricao": "Consulta odontológica",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "81000049",
+    "descricao": "Consulta odontológica de retorno",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "81000057",
+    "descricao": "Consulta odontológica de urgência noturna",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "81000065",
+    "descricao": "Consulta odontológica inicial",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "81000073",
+    "descricao": "Consulta odontológica especializada",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "81000340",
+    "descricao": "Radiografia da ATM",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "82000468",
+    "descricao": "Procedimento de diagnóstico laboratorial odontológico",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "83000097",
+    "descricao": "Mantenedor de Espaço Fixo",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "83000100",
+    "descricao": "Mantenedor de Espaço Removível",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "84000198",
+    "descricao": "Exodontia Simples",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "85100072",
+    "descricao": "Placa de Acetato para Clareamento",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "85100200",
+    "descricao": "Restauração de dente",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "85200018",
+    "descricao": "Clareamento de Dente Desvitalizado",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "85300047",
+    "descricao": "Procedimento Periodontia",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "86000300",
+    "descricao": "Reposição de Aparelho Móvel",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  },
+  {
+    "codigo": "87000148",
+    "descricao": "Procedimento odontológico hospitalar",
+    "ativo": true,
+    "vigenciaInicio": "2025-07-01",
+    "vigenciaFim": null,
+    "atualizadoEm": "2026-03-26"
+  }
 ]
