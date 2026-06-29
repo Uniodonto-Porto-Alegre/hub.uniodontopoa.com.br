@@ -11,16 +11,20 @@
         <form @submit.prevent="fazerLogin">
           <div class="mb-3">
             <label class="form-label fw-bold small">Usuário</label>
-            <input v-model="usuario" type="text" class="form-control bg-light border-0" placeholder="usuario.ad" required />
+            <input v-model="usuario" type="text" class="form-control bg-light border-0" placeholder="usuario.ad" :disabled="isLoading" required />
           </div>
 
           <div class="mb-4">
             <label class="form-label fw-bold small">Senha</label>
-            <input v-model="senha" type="password" class="form-control bg-light border-0" placeholder="••••••" required />
+            <input v-model="senha" type="password" class="form-control bg-light border-0" placeholder="••••••" :disabled="isLoading" required />
           </div>
 
-          <button type="submit" class="btn btn-uniodonto w-100 py-3 fw-bold shadow-sm">
-            ENTRAR
+          <div v-if="errorMessage" class="alert alert-danger py-2 small" role="alert">
+            {{ errorMessage }}
+          </div>
+
+          <button type="submit" class="btn btn-uniodonto w-100 py-3 fw-bold shadow-sm" :disabled="isLoading">
+            {{ isLoading ? 'ENTRANDO...' : 'ENTRAR' }}
           </button>
         </form>
 
@@ -35,17 +39,43 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '../../../stores/auth';
+import { loginWithAd } from '../../../services/auth';
 
 const router = useRouter();
+const authStore = useAuthStore();
 const usuario = ref('');
 const senha = ref('');
+const isLoading = ref(false);
+const errorMessage = ref('');
 
-const fazerLogin = () => {
-  // SIMULAÇÃO DE LOGIN
-  // Em produção, isso chamará o Backend Python/LDAP
-  if (usuario.value) {
-    sessionStorage.setItem('user_token', 'demo-token-123');
-    router.push('/'); // Manda para o Dashboard
+const fazerLogin = async () => {
+  if (!usuario.value.trim() || !senha.value.trim()) {
+    errorMessage.value = 'Informe usuário e senha para autenticar.';
+    return;
+  }
+
+  isLoading.value = true;
+  errorMessage.value = '';
+
+  try {
+    const result = await loginWithAd({
+      username: usuario.value,
+      password: senha.value,
+    });
+
+    authStore.login({
+      token: result.token,
+      username: result.user.username,
+      displayName: result.user.displayName,
+      email: result.user.email,
+    });
+
+    router.push('/');
+  } catch (error) {
+    errorMessage.value = error instanceof Error ? error.message : 'Falha inesperada ao autenticar com o Active Directory.';
+  } finally {
+    isLoading.value = false;
   }
 };
 </script>

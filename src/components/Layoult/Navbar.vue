@@ -46,16 +46,23 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from '../../stores/auth';
+import { logoutFromAd } from '../../services/auth';
 
 const router = useRouter();
-const userName = 'Auditor Uniodonto'; // Placeholder
+const authStore = useAuthStore();
+
+authStore.hydrateFromSession();
+
+const userName = computed(() => authStore.effectiveDisplayName);
 
 const userInitials = computed(() => {
-  return userName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+  return authStore.userInitials;
 });
 
-const logout = () => {
-  sessionStorage.removeItem('user_token');
+const logout = async () => {
+  await logoutFromAd(authStore.token);
+  authStore.logout();
   router.push('/login');
 };
 </script>
