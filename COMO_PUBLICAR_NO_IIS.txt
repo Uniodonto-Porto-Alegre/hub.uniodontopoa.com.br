@@ -1,0 +1,8 @@
+1. npm run deploy — builda o frontend e copia frontend + código do backend (server/src, package.json, package-lock.json) 
+para \\10.100.10.91\e$\Projetos\hub.uniodontopoa.com.br, sem tocar em node_modules/.env de produção.
+2. No servidor, reiniciar o serviço: nssm restart hub-api (ou via services.msc).
+
+Só um cuidado: se você adicionar uma dependência nova em server/package.json (ex: npm install algum-pacote dentro de server/), 
+o script avisa no final, mas você precisa entrar no servidor e rodar npm install dentro de 
+E:\Projetos\hub.uniodontopoa.com.br\server manualmente — o script não mexe em node_modules de propósito, pra não quebrar 
+nada em produção sem querer. Se isso não acontecer (só mudou código), é só rodar npm run deploy e reiniciar o serviço.

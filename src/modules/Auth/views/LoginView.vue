@@ -3,15 +3,15 @@
     <div class="card shadow border-0" style="max-width: 400px; width: 100%;">
       <div class="card-body p-5">
         <div class="text-center mb-5">
-          <img src="../../../assets/logo.png" alt="Uniodonto" height="60" class="mb-4">
-          <h4 class="fw-bold text-dark">Portal de Auditoria</h4>
-          <p class="text-muted small">Use suas credenciais do AD</p>
+          <img src="../../../assets/logo.png" alt="Uniodonto" height="95" class="mb-4">
+          <h4 class="fw-bold text-dark">HUB de Sistemas Uniodonto Porto Alegre</h4>
+          <p class="text-muted small">Use suas credenciais de rede</p>
         </div>
 
         <form @submit.prevent="fazerLogin">
           <div class="mb-3">
             <label class="form-label fw-bold small">Usuário</label>
-            <input v-model="usuario" type="text" class="form-control bg-light border-0" placeholder="usuario.ad" :disabled="isLoading" required />
+            <input v-model="usuario" type="text" class="form-control bg-light border-0" placeholder="Usuário de Rede" :disabled="isLoading" required />
           </div>
 
           <div class="mb-4">
@@ -28,9 +28,9 @@
           </button>
         </form>
 
-        <div class="mt-3 text-center">
+        <!--<div class="mt-3 text-center">
           <small class="text-muted">Ambiente de Desenvolvimento</small>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>
