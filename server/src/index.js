@@ -11,6 +11,14 @@ import { generateXmlBundleZip } from './xml-bundle.js';
 
 validateConfig();
 
+process.on('uncaughtException', (error) => {
+  console.error('[uncaughtException]', error);
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('[unhandledRejection]', reason);
+});
+
 const app = express();
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -306,6 +314,7 @@ app.post('/api/financeiro/faturas-links-xlsx', requireAuth, upload.single('arqui
     res.setHeader('Content-Disposition', `attachment; filename="links_xml_${timestamp}.xlsx"`);
     res.send(output);
   } catch (error) {
+    console.error('[faturas-links-xlsx]', error);
     const message = error instanceof Error ? error.message : 'Falha ao processar planilha.';
     const statusCode = /coluna "fatura"|planilha|extrair|limite/i.test(message) ? 400 : 500;
 
@@ -327,6 +336,7 @@ app.post('/api/financeiro/faturas-links-json', requireAuth, upload.single('arqui
       links,
     });
   } catch (error) {
+    console.error('[faturas-links-json]', error);
     const message = error instanceof Error ? error.message : 'Falha ao processar planilha.';
     const statusCode = /coluna "fatura"|planilha|extrair|limite/i.test(message) ? 400 : 500;
 
@@ -366,6 +376,7 @@ app.post('/api/financeiro/faturas-xml-zip', requireAuth, upload.single('arquivo'
     res.setHeader('Content-Disposition', `attachment; filename="xml_notas_${timestamp}.zip"`);
     res.send(zipBuffer);
   } catch (error) {
+    console.error('[faturas-xml-zip]', error);
     const message = error instanceof Error ? error.message : 'Falha ao gerar pacote XML.';
     const statusCode = /coluna "fatura"|planilha|extrair|limite|nenhum link/i.test(message) ? 400 : 500;
 
