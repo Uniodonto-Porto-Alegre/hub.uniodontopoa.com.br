@@ -1,4 +1,5 @@
-1. npm run deploy — builda o frontend e copia frontend + código do backend (server/src, package.json, package-lock.json) 
+1. cd /
+ — builda o frontend e copia frontend + código do backend (server/src, package.json, package-lock.json) 
 para \\10.100.10.91\e$\Projetos\hub.uniodontopoa.com.br, sem tocar em node_modules/.env de produção.
 2. No servidor, reiniciar o serviço: nssm restart hub-api (ou via services.msc).
 
